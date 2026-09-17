@@ -10,6 +10,13 @@ The system provides a collegiate-grade portal for university registrars and acad
 
 ---
 
+## 🌐 Live Deployment & Repository Links
+- **GitHub Repository**: [https://github.com/hemanth2607-cyber/scholardesk-student-management-system](https://github.com/hemanth2607-cyber/scholardesk-student-management-system)
+- **Live Deployed Application**: `https://scholardesk-student-management-system.onrender.com` *(or your Vercel deployment link)*
+- **API Base Endpoint**: `/api/students/`
+
+---
+
 ## 2. Problem Statement
 Academic institutions require reliable, secure, and intuitive registry software to track student enrollment records, manage departmental rosters, calculate aggregate academic indicators, and prevent data discrepancies (such as duplicate identification numbers or out-of-range GPAs). Manual spreadsheets or disconnected tools often cause data fragmentation and validation failures.
 
