@@ -5,6 +5,7 @@ __pycache__/
 *.sqlite3-journal
 local_settings.py
 db.sqlite3
+staticfiles/
 
 # Environments
 .env
