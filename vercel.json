@@ -2,12 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.11"
-      }
+      "src": "api/index.py",
+      "use": "@vercel/python"
     },
     {
       "src": "frontend/**",
@@ -17,10 +13,18 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "backend/wsgi.py"
+      "dest": "api/index.py"
     },
     {
-      "src": "/(.*\\.(css|js|png|jpg|svg|ico))",
+      "src": "/styles.css",
+      "dest": "/frontend/styles.css"
+    },
+    {
+      "src": "/app.js",
+      "dest": "/frontend/app.js"
+    },
+    {
+      "src": "/(.*\\.(css|js|png|jpg|svg|ico|json))",
       "dest": "/frontend/$1"
     },
     {
