@@ -15,6 +15,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.vercel.app',
+    'https://*.onrender.com',
+    'https://*.railway.app',
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+]
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -33,6 +41,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -96,6 +105,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'frontend',
 ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # CORS Configuration
 CORS_ALLOW_ALL_ORIGINS = True
